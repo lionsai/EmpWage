@@ -1,21 +1,23 @@
 package EmpWage;
 
-public class EmpUC5 {
+public class EmpUC6 {
 
 
 	public  static final int is_Part_Time = 1;
 	public  static final int is_Full_Time = 2;
 	public  static final int Emp_Rate_Per_Hours = 20;
 	public static final int Number_of_Working_Days=2;
-	
+	public static final int Max_Hours_In_Month=10;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		int empHrs=0;
-		int empWage=0;
-		int totalEmpWage=0;
-		
-		for(int day=0; day<Number_of_Working_Days;day++)
+		int totalEmpHours=0;
+		int totalWorkingDays=0;
+		while(totalEmpHours <=Max_Hours_In_Month && totalWorkingDays < Number_of_Working_Days)
 		{
+			totalWorkingDays++;
 			int empCheck = (int)Math.floor(Math.random()*10)%3;
 			switch (empCheck) {
 			case is_Part_Time:
@@ -27,14 +29,13 @@ public class EmpUC5 {
 			default :
 	        	empHrs=0;
 	        }
-	        empWage=empHrs*Emp_Rate_Per_Hours;
-	        totalEmpWage += empWage;
-	        System.out.println("EmpWage: "+empWage);
+			totalEmpHours += empHrs;
+	        System.out.println("Day:"+ totalWorkingDays+"-->EmpHr:"+empHrs);
+	        
          }
-         System.out.println("totalemp wage: "+totalEmpWage);
-
-		}
-	}
+		 int totalEmpWage = totalEmpHours*Emp_Rate_Per_Hours;
+	        System.out.println("TotalEmpWagae:"+ totalEmpWage);
 
 
-
+      }
+}
