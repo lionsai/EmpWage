@@ -1,23 +1,29 @@
 package EmpWage;
 
-public class EmpUC3 {
-    public static void main(String[] args) {
-
-        int is_Part_Time = 1;
-        int is_Full_Time = 2;
-        int Emp_Rate_Per_Hour = 20;
-        int Emp_Hours = 0;
+public class EmpUC4 {
+	
+	public  static final int is_Part_Time = 1;
+	public  static final int is_Full_Time = 2;
+	public  static final int Emp_Rate_Per_Hours = 20;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	    int Emp_Hours = 0;
         int Emp_Wage = 0;
+        int emp_check=(int) Math.floor(Math.random()*10)%3;
+        switch (emp_check) {
+        
+        case is_Part_Time:
+        	Emp_Hours=4;
+        	break;
+        case is_Full_Time:
+        	Emp_Hours=8;
+        	break;
+        default :
+        	Emp_Hours=0;
+        }
+        Emp_Wage=Emp_Hours*Emp_Rate_Per_Hours;
+        System.out.println("employee wage: "+Emp_Wage);
+		}
+       }
 
-        double empCheck = Math.floor(Math.random() * 10) % 3;
-        if (empCheck == is_Part_Time)
-            Emp_Hours = 4;
-        else if (empCheck == is_Full_Time)
-            Emp_Hours = 8;
-        else
-            Emp_Hours = 0;
-        Emp_Wage = Emp_Hours * Emp_Rate_Per_Hour;
-		System.out.println("EmpWage:" + Emp_Wage);
-
-    }
-}
